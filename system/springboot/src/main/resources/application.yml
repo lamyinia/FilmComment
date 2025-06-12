@@ -12,12 +12,10 @@ spring:
       max-file-size: 100MB
       max-request-size: 100MB
 
-# 配置mybatis实体和xml映射
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     map-underscore-to-camel-case: true
 
-# 文件上传的前缀url
-fileBaseUrl: http://localhost:9090
+fileBaseUrl: http://113.44.158.255:9090

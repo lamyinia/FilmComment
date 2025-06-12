@@ -36,11 +36,14 @@ public class FilmService {
         filmMapper.deleteById(id);
     }
 
-    /*
-        @param pageNum 当前的页码
-        @param pageSize 每页的个数
-        @return 分页的对象，包含数据和分页参数 total
+
+    /**
+     * @param film
+     * @param pageNum 当前的页码
+     * @param pageSize 每页的个数
+     * @return {@link PageInfo }<{@link Film }> 分页的对象，包含数据和分页参数 total
      */
+
     public PageInfo<Film> selectPage(Film film, Integer pageNum, Integer pageSize) {
         PageHelper.startPage(pageNum, pageSize);
         List<Film> list = filmMapper.selectAll(film);
@@ -55,7 +58,7 @@ public class FilmService {
         this.setScore(f);
         return f;
     }
-    // 随机推荐电影
+
     public List<Film> selectRecommend(Integer id) {
         List <Film> films = this.selectAll(null);
         films = films.stream().filter(film -> !film.getId().equals(id)).collect(Collectors.toList());

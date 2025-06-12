@@ -163,7 +163,7 @@
     onError(file, err) {
       const MAX_MB = 2
       if (err.message?.includes('exceeds maximum')) {
-        const fileSizeMB = (file.size / 1024 / 1024).toFixed(1)
+        const fileSizeMB = (file.size / 1024 / 1024).toFixed(3)
         ElMessage.error(`文件大小（${fileSizeMB}MB）超过${MAX_MB}MB限制`)
       } else {
         ElMessage.error(`上传失败: ${err.message || '未知错误'}`)

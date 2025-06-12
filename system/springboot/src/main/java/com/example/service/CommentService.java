@@ -32,7 +32,7 @@ public class CommentService {
         commentMapper.deleteById(id);
     }
 
-    /*
+    /**
         @param pageNum 当前的页码
         @param pageSize 每页的个数
         @return 分页的对象，包含数据和分页参数 total

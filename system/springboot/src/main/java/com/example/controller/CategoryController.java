@@ -15,34 +15,25 @@ public class CategoryController {
 
     @Resource
     private CategoryService categoryService;
-    /*
-        新增数据
-     */
+
     @PostMapping("/add")
     public Result add(@RequestBody Category category){
         categoryService.add(category);
         return Result.success();
     }
 
-    /*
-        更新数据
-     */
     @PutMapping("/update")
     public Result update(@RequestBody Category category){
         categoryService.update(category);
         return Result.success();
     }
-    /*
-        删除
-     */
+
     @DeleteMapping("/delete/{id}")
     public Result delete(@PathVariable Integer id){
         categoryService.deleteById(id);
         return Result.success();
     }
-    /*
-        获取数据
-     */
+
     @GetMapping("/selectAll")
     public Result selectAll(Category category){
         List<Category> list = categoryService.selectAll(category);

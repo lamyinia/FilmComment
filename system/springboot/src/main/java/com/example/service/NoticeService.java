@@ -31,10 +31,11 @@ public class NoticeService {
         noticeMapper.deleteByid(id);
     }
 
-    /*
-        @param pageNum 当前的页码
-        @param pageSize 每页的个数
-        @return 分页的对象，包含数据和分页参数 total
+    /**
+     * @param notice
+     * @param pageNum 当前的页码
+     * @param pageSize 每页的个数
+     * @return {@link PageInfo }<{@link Notice }> 分页的对象，包含数据和分页参数 total
      */
     public PageInfo<Notice> selectPage(Notice notice, Integer pageNum, Integer pageSize) {
         PageHelper.startPage(pageNum, pageSize);
